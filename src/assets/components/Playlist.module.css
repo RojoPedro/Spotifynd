@@ -1,0 +1,130 @@
+/* Playlist.module.css */
+.playlistContainer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-height: 680px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleInput {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  color: #2d1b4e;
+  margin-bottom: 20px;
+}
+
+.titleInput:focus {
+  border-color: #1db954;
+  box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.1);
+}
+
+.divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8a2be2, transparent);
+  margin-bottom: 20px;
+  border: none;
+}
+
+.tracksContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.tracksContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tracksContainer::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.tracksContainer::-webkit-scrollbar-thumb {
+  background: #1db954;
+  border-radius: 10px;
+}
+
+.tracksContainer::-webkit-scrollbar-thumb:hover {
+  background: #17a043;
+}
+
+.trackCard {
+  background: #ffffff;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.trackCard:hover {
+  border-color: #1db954;
+  box-shadow: 0 5px 15px rgba(29, 185, 84, 0.2);
+}
+
+.trackInfo {
+  flex: 1;
+}
+
+.trackName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d1b4e;
+  margin: 0 0 5px 0;
+}
+
+.trackDetails {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.removeButton {
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.removeButton:hover {
+  background: #cc0000;
+  transform: scale(1.1) rotate(90deg);
+}
+
+.removeButton:active {
+  transform: scale(0.95) rotate(90deg);
+}
+
+.emptyState {
+  text-align: center;
+  color: #999;
+  padding: 60px 20px;
+  font-size: 16px;
+}

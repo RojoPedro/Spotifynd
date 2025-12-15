@@ -1,0 +1,84 @@
+/* App.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap');
+
+.appContainer {
+  min-height: 100vh;
+  width: 100vw;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.8) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(82, 105, 180, 0.8) 0%, transparent 50%),
+    radial-gradient(circle at 40% 0%, rgba(25, 25, 112, 0.6) 0%, transparent 40%),
+    linear-gradient(135deg, #1a1a2e 0%, #94411d 50%, #16213e 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  padding: 40px;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 60px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.saveButton {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: #1db954;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(29, 185, 84, 0.4);
+  z-index: 100;
+}
+
+.saveButton:hover {
+  background: #1ed760;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(29, 185, 84, 0.6);
+}
+
+.saveButton:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+}

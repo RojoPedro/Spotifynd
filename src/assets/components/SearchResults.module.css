@@ -1,0 +1,91 @@
+/* SearchResults.module.css */
+.resultsContainer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.resultsContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.resultsContainer::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.resultsContainer::-webkit-scrollbar-thumb {
+  background: #8a2be2;
+  border-radius: 10px;
+}
+
+.resultsContainer::-webkit-scrollbar-thumb:hover {
+  background: #6a1bb2;
+}
+
+.trackCard {
+  background: #ffffff;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.trackCard:hover {
+  transform: translateX(5px);
+  border-color: #8a2be2;
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
+}
+
+.trackInfo {
+  flex: 1;
+}
+
+.trackName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d1b4e;
+  margin: 0 0 5px 0;
+}
+
+.trackDetails {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.addButton {
+  background: #8a2be2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.addButton:hover {
+  background: #6a1bb2;
+  transform: scale(1.05);
+}
+
+.addButton:active {
+  transform: scale(0.98);
+}
+
+.emptyState {
+  text-align: center;
+  color: #999;
+  padding: 40px 20px;
+  font-size: 16px;
+}

@@ -1,5 +1,6 @@
 import React ,{useState, useEffect} from "react";
 import { redirectToAuthCodeFlow, getAccessToken } from "../../services/spotifyAuth.js";
+import styles from './App.module.css';
 
 // Base URL per le API Spotify; preferisci mettere VITE_SPOTIFY_API_URL in .env.local
 const SPOTIFY_API_URL = import.meta.env.VITE_SPOTIFY_API_URL || 'https://api.spotify.com/v1';
@@ -7,8 +8,6 @@ const SPOTIFY_API_URL = import.meta.env.VITE_SPOTIFY_API_URL || 'https://api.spo
 import Playlist from "./Playlist.jsx";
 import SearchBar from "./SearchBar.jsx";
 import SearchResults from "./SearchResults.jsx";
-import Track from "./Track.jsx";
-import Tracklist from "./Tracklist.jsx";
 import LoginGate from "./LoginGate.jsx";
 
 const App = () => {
@@ -225,14 +224,21 @@ const onSavePlaylist = async () => {
             {!accessToken? 
                 <LoginGate handleLogin={handleLogin}/>
             :
-                <div>
-                    <SearchBar searchFunc={onSearch}/>
-                    <SearchResults toRender={searchResults} onAdded={onTrackAdded}/>
-                    <Playlist tracks={tracks} title={playlistTitle} onRemove={onTrackRemoved} setTitle={setPlaylistTitle}/>
-                    {/* <Track />
-                    <Tracklist /> */}
-                    <button onClick={onSavePlaylist}>Save {playlistTitle} to Spotify</button>
-                </div>}
+                <div className={styles.appContainer}>
+    <div className={styles.header}>
+        <h1 className={styles.logo}>SPOTIFYND</h1>
+    </div>
+    <div className={styles.mainContent}>
+        <div>
+            <SearchBar searchFunc={onSearch}/>
+            <SearchResults toRender={searchResults} onAdded={onTrackAdded}/>
+        </div>
+        <Playlist tracks={tracks} title={playlistTitle} onRemove={onTrackRemoved} setTitle={setPlaylistTitle}/>
+    </div>
+    <button className={styles.saveButton} onClick={onSavePlaylist}>
+        Save to Spotify
+    </button>
+</div>}
         </div>
     )
 }
