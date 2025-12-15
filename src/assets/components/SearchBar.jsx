@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './SearchBar.module.css';
 
-const SearchBar = ({searchFunc, setSearchTerm}) => {
+const SearchBar = ({searchFunc, setSearchTerm, serachTerm}) => {
     return (
         <div className={styles.searchContainer}>
             <label className={styles.label}>Search a song:</label>
