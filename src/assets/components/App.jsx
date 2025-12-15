@@ -7,22 +7,29 @@ import Tracklist from "./Tracklist.jsx";
 
 const App = () => {
     const [searchResults, setSearchResults] = useState([]);
+    const [tracks, setTracks] = useState([])
+    const [playlistTitle, setPlaylistTitle] = useState("My Playlist")
 
     const onSearch = () => { 
         //search functionality will go here
         const fakeFetch = [
-            {name: "name", artist: "artist", album: "album", id: 1},
-            {name: "name2", artist: "artist2", album: "album2", id: 2}]; 
+            {name: "Il Metodo Migliore", artist: "Hammon", album: "Scammers", id: 1},
+            {name: "Favolacce", artist: "Nayt", album: "Sensibile", id: 2}]; 
         setSearchResults(fakeFetch)
+    }
+
+    const onTrackAdded = (track) => {
+        //add track functionality will go here
+        setTracks(prev => [track,...prev])
     }
 
     return (
         <div>
             <SearchBar />
-            <Playlist />
-            <SearchResults toRender={searchResults}/>
-            <Track />
-            <Tracklist />
+            <SearchResults toRender={searchResults} onAdded={onTrackAdded}/>
+            <Playlist tracks={tracks} title={playlistTitle}/>
+            {/* <Track />
+            <Tracklist /> */}
             <button>Save to Spotify</button>
             <button onClick={onSearch}>Search</button>
         </div>
