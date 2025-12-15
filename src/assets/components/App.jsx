@@ -211,7 +211,8 @@ const onSavePlaylist = async () => {
         
         // Resetta gli stati locali dopo il salvataggio
         setTracks([]); 
-        setPlaylistTitle("My Playlist");
+        setPlaylistTitle("");
+        setSearchTerm("")
         
     } catch (error) {
         console.error("Salvataggio fallito:", error);
