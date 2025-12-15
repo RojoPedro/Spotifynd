@@ -174,6 +174,7 @@ const onSavePlaylist = async () => {
             },
             body: JSON.stringify({
                 name: playlistTitle,
+                description: "Made with Spotifynd app",
                 public: false // La rendiamo privata per Jammming
             })
         });
