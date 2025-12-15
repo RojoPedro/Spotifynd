@@ -127,7 +127,6 @@ const onSearch = async (term) => {
         setSearchResults([]);
     } finally {
         setIsLoading(false);
-        setSearchTerm("");
     }
 }
 
